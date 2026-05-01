@@ -1,0 +1,19 @@
+<project name="MyApp" default="run" basedir=".">
+
+    <property name="src" value="src"/>
+    <property name="out" value="out"/>
+
+    <target name="clean">
+        <delete dir="${out}"/>
+    </target>
+
+    <target name="compile" depends="clean">
+        <mkdir dir="${out}"/>
+        <javac srcdir="${src}" destdir="${out}"/>
+    </target>
+
+    <target name="run" depends="compile">
+        <java classname="Hello" classpath="${out}"/>
+    </target>
+
+</project>
